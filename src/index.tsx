@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
-import App from './App';
+import WeatherDisplay from './components/weather-display/WeatherDisplay';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <WeatherDisplay />
   </React.StrictMode>,
   document.getElementById('root')
 );
