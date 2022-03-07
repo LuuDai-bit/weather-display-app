@@ -2,8 +2,11 @@ import React from "react";
 import WeatherDropdown from "../weather-dropdown-menu/WeatherDropdown";
 import WeatherInfo from "../weather-info/WeatherInfo";
 
-class WeatherDisplay extends React.Component<{}, {weatherOption: string}> {
-  constructor(props: any) {
+type weatherDisplayProps = {};
+type weatherDisplayState = { weatherOption: string };
+
+class WeatherDisplay extends React.Component<weatherDisplayProps, weatherDisplayState> {
+  constructor(props: weatherDisplayProps) {
     super(props);
     this.state = {
       weatherOption: ''

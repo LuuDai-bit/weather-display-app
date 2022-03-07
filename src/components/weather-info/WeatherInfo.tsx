@@ -1,7 +1,10 @@
 import React from 'react';
 
-class WeatherInfo extends React.Component<{}, {weatherOption: string}> {
-  constructor(props: any) {
+type weatherInfoProps = {};
+type weatherInfoState = { weatherOption: string };
+
+class WeatherInfo extends React.Component<{}, weatherInfoState> {
+  constructor(props: weatherInfoProps) {
     super(props);
     this.state = {
       weatherOption: ''

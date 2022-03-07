@@ -1,5 +1,4 @@
 import React from 'react';
-import { updateStrings } from 'yargs';
 
 type weatherDropdownProps = { updateWeatherOption: (weatherOption: string) => void };
 type weatherDropdownState = { weatherOption: string };
@@ -7,7 +6,7 @@ type weatherDropdownState = { weatherOption: string };
 class WeatherDropdown extends React.Component<weatherDropdownProps, weatherDropdownState> {
   static readonly WEATHER_OPTIONS = ['Temperature', 'Humidity', 'Warning Level'];
 
-  constructor(props: any) {
+  constructor(props: weatherDropdownProps) {
     super(props);
     this.state = {
       weatherOption: ''
@@ -34,6 +33,7 @@ class WeatherDropdown extends React.Component<weatherDropdownProps, weatherDropd
           {
             WeatherDropdown.WEATHER_OPTIONS.map( weather_option => {
               return (<option
+                key={weather_option}
                 value={weather_option}
                 >{weather_option}</option>);
             })
