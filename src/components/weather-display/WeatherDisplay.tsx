@@ -23,8 +23,7 @@ class WeatherDisplay extends React.Component<weatherDisplayProps, weatherDisplay
       <div>
         <WeatherDropdown
           updateWeatherOption={this.updateWeatherOption}></WeatherDropdown>
-          <p>{this.state.weatherOption}</p>
-        <WeatherInfo></WeatherInfo>
+        <WeatherInfo weatherOption={this.state.weatherOption}></WeatherInfo>
       </div>
     );
   }
