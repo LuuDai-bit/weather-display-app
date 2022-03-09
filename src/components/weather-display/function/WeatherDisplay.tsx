@@ -1,15 +1,15 @@
 import { useState } from 'react';
-import WeatherDropdown from '../../weather-dropdown-menu/function/WeatherDropdown';
+import WeatherCheckbox from '../../weather-checkbox-menu/WeatherCheckbox';
 import WeatherInfo from '../../weather-info/function/WeatherInfo';
 
 const WeatherDispay = () => {
-  const [weatherOption, setWeatherOption] = useState('');
+  const [weatherOptions, setWeatherOptions] = useState<string[]>([]);
 
   return (
     <div>
-      <WeatherDropdown
-        updateWeatherOption={setWeatherOption}></WeatherDropdown>
-      <WeatherInfo weatherOption={weatherOption}></WeatherInfo>
+      <WeatherCheckbox
+        updateWeatherOptions={setWeatherOptions}></WeatherCheckbox>
+      <WeatherInfo weatherOptions={weatherOptions}></WeatherInfo>
     </div>
   );
 }
