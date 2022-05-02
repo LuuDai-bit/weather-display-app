@@ -7,9 +7,9 @@ const WeatherDropdown = (props: weatherDropdownProps) => {
 
   const WEATHER_OPTIONS = ['Temperature', 'Humidity', 'Warning Level'];
 
-  const changeWeatherOption = (weatherOption: string) => {
-    props.updateWeatherOption(weatherOption);
-    setWeatherOption(weatherOption);
+  const changeWeatherOption = (event: any) => {
+    setWeatherOption(event.target.value);
+    props.updateWeatherOption(event.target.value);
   }
 
   return (
@@ -19,7 +19,7 @@ const WeatherDropdown = (props: weatherDropdownProps) => {
         name=""
         id="weather-select"
         value={weatherOption}
-        onChange={() => changeWeatherOption(weatherOption)}>
+        onChange={changeWeatherOption}>
         <option value="">Choose an option</option>
         {
           WEATHER_OPTIONS.map( weather_option => {

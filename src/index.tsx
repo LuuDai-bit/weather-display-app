@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
-import WeatherDisplay from './components/weather-display/WeatherDisplay';
+import WeatherDisplay from './components/weather-display/function/WeatherDisplay';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(

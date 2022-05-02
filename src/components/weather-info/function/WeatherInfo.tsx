@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import weatherData from "../../../dump_data/weather_data.json";
 
 type weatherInfoProps = { weatherOption: string };
@@ -13,9 +13,13 @@ const WeatherInfo = (props: weatherInfoProps) => {
   const [weatherOption, setWeatherOption] = useState('');
   const temperature = weatherData.temperature;
   const humidity = weatherData.humidity;
-  const warningLevel = weatherData.warningLevel;
+  const warningLevel = WarningLevel[weatherData.warningLevel];
 
-  switch(weatherOption.toLowerCase()) {
+  useEffect(() => {
+    setWeatherOption(props.weatherOption.toLowerCase());
+  }, [props.weatherOption]);
+
+  switch(weatherOption) {
     case 'temperature':
       return (
         <div>
@@ -28,7 +32,7 @@ const WeatherInfo = (props: weatherInfoProps) => {
           Humidity: {humidity}
         </div>
       );
-    case 'warningLevel':
+    case 'warning level':
       return (
         <div>
           Warning Level: {warningLevel}
