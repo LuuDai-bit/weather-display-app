@@ -2,20 +2,16 @@ import { useState } from 'react';
 import WeatherDropdown from '../../weather-dropdown-menu/function/WeatherDropdown';
 import WeatherInfo from '../../weather-info/function/WeatherInfo';
 
-type weatherDisplayProps = {};
-
-const WeatherDispay = (props: weatherDisplayProps) => {
+const WeatherDispay = () => {
   const [weatherOption, setWeatherOption] = useState('');
-
-  const updateWeatherOption = (weatherOption: string) => {
-    setWeatherOption(weatherOption);
-  }
 
   return (
     <div>
       <WeatherDropdown
-        updateWeatherOption={updateWeatherOption}></WeatherDropdown>
+        updateWeatherOption={setWeatherOption}></WeatherDropdown>
       <WeatherInfo weatherOption={weatherOption}></WeatherInfo>
     </div>
   );
 }
+
+export default WeatherDispay;
